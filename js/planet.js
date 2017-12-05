@@ -25,14 +25,22 @@ const API = {
       loadPlanet(this.currentData, this.indexPlanet)
   
       // configura a 'paginação' dos botões
-      this.indexPlanet <= 8 ? document.getElementById("btnPrevious").removeAttribute("disabled") : document.getElementById("btnNext").setAttribute("disabled","disabled")
+      if (this.indexPlanet <= 8) {
+        document.getElementById("btnPrevious").removeAttribute("disabled")
+      }else{
+        document.getElementById("btnNext").setAttribute("disabled","disabled")
+      }
+      
     },
     previous: function() { 
       // decrementa
       this.indexPlanet--
+      
   
       // chama novamente a função e atualiza os dados da página
       loadPlanet(this.currentData, this.indexPlanet)
+
+      
   
       // configura a 'paginação' dos botões
       if (this.indexPlanet === 0) {
@@ -40,6 +48,7 @@ const API = {
         document.getElementById("btnPrevious").setAttribute("disabled","disabled")
       } else {
         document.getElementById("btnPrevious").removeAttribute("disabled")
+        document.getElementById("btnNext").removeAttribute("disabled")
       }
     }
   }

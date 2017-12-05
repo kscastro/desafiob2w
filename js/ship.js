@@ -40,6 +40,7 @@ const API = {
         document.getElementById("btnPrevious").setAttribute("disabled","disabled")
       } else {
         document.getElementById("btnPrevious").removeAttribute("disabled")
+        document.getElementById("btnNext").removeAttribute("disabled")
       }
     }
   }
