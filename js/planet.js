@@ -25,11 +25,7 @@ const API = {
       loadPlanet(this.currentData, this.indexPlanet)
   
       // configura a 'paginação' dos botões
-      if (this.indexPlanet <= 8) {
-        document.getElementById("btnPrevious").removeAttribute("disabled")
-      }else{
-        document.getElementById("btnNext").setAttribute("disabled","disabled")
-      }
+      this.indexPlanet <= 8 ? document.getElementById("btnPrevious").removeAttribute("disabled") : document.getElementById("btnNext").setAttribute("disabled","disabled")
       
     },
     previous: function() { 
