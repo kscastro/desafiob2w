@@ -1,7 +1,7 @@
 let indexNave = 0 
 console.log('Inicio', indexNave)
 
-const list2 = $.get("https://swapi.co/api/starships/?page=1", data => {
+const list = $.get("https://swapi.co/api/starships/?page=1", data => {
     this.data = data
     mudarNave()
 })

@@ -1,7 +1,7 @@
 let indexPerson = 0 
 console.log('Inicio', indexPerson)
 
-const list2 = $.get("https://swapi.co/api/people/?page=1", data => {
+const list = $.get("https://swapi.co/api/people/?page=1", data => {
     this.data = data
     mudarPerson()
 })
@@ -21,10 +21,19 @@ previous = () => {
     console.log('Depois', indexPerson)
 }
 
-function mudarPerson(){
+namePlanet = () => {
+    return $.get("https://swapi.co/api/planets/1/", data => { 
+      console.log(data)
+      return JSON.stringify(data.name)
+  })
+
+}
+
+mudarPerson = () => {
     document.getElementById("nome").innerHTML = data.results[indexPerson].name
     document.getElementById("altura").innerHTML = data.results[indexPerson].height
     document.getElementById("birth").innerHTML = data.results[indexPerson].birth_year
-    document.getElementById("planeta").innerHTML = data.results[indexPerson].homeworld
+    document.getElementById("planeta").innerHTML = namePlanet()[0]
+    //document.getElementById("planeta").innerHTML = data.results[indexPerson].homeworld
     document.getElementById("filme").innerHTML = data.results[indexPerson].films.length
 }
